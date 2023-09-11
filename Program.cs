@@ -13,7 +13,7 @@
 
 string[] CreateNewArray(int indexNew, string[] arr)
 {
-    Console.WriteLine(indexNew);
+    Console.WriteLine($"Количество элементов в новом массиве: {indexNew}");
     string[] textArrayNew = new string[indexNew];
     indexNew = 0;
     for (int i = 0; i < arr.Length; i++)
@@ -29,13 +29,16 @@ string[] CreateNewArray(int indexNew, string[] arr)
 
 void TestNewArray(string[] arr)
 {
-    Console.WriteLine();
-    foreach (string s in arr)
-    {
-        Console.WriteLine(s);
-    }
+    Console.Write($"[{string.Join(", ", arr)}]");
+    
+    // foreach (string s in arr)
+    // {
+    //     Console.Write($"{s}  ");
+    // }
 }
 
 string[] textArray = { "Hello", "2", "world", ":-)", "sdf" };
 string[] textArrayNew = CreateNewArray(getTextArrayNewSize(textArray), textArray);
+TestNewArray(textArray);
+Console.Write("->");
 TestNewArray(textArrayNew);
